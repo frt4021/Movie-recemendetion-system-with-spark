@@ -22,9 +22,9 @@ public class Main {
         MovieRecommendation movieRecommendation = new MovieRecommendation(sc);
 
         // CSV dosyalarını okuyarak Movies ve Ratings veri kümesini elde ediyoruz
-        JavaRDD<Movie> movies = movieRecommendation.loadMovies("/home/fb/Desktop/java_project/movie_rec_Sys/movies.csv");
-        JavaRDD<Rating> ratings = movieRecommendation.loadRatings("/home/fb/Desktop/java_project/movie_rec_Sys/ratings.csv");
-        JavaRDD<Tag> tags = movieRecommendation.loadTags("/home/fb/Desktop/java_project/movie_rec_Sys/tags.csv");
+        JavaRDD<Movie> movies = movieRecommendation.loadMovies("movies.csv");
+        JavaRDD<Rating> ratings = movieRecommendation.loadRatings("ratings.csv");
+        JavaRDD<Tag> tags = movieRecommendation.loadTags("tags.csv");
 
         // Film önerilerini başlatıyoruz
         movieRecommendation.recommendMovies(movies, ratings);
